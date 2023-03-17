@@ -20,9 +20,9 @@ import SubList from './SubList'
 import { Folder, File } from './template'
 
 // ---------------------------------------------------
-const search = window.location.search
+//const search = window.location.search
 // 请在这里更改你需要的 url 参数
-// const search = '?git=github&github=typoverflow/note'
+const search = '?git=github&github=lychnin/MathOrange'
 // ---------------------------------------------------
 
 const drawerWidth = 300
@@ -243,7 +243,7 @@ export default function App() {
 
     function handleFileClick(file: File) {
         setMobileOpen(false)
-        
+
         const query = getQuery()
         let preUrl = ''
         let aftUrl = ''
@@ -257,7 +257,7 @@ export default function App() {
         const url = `${preUrl}${query.git === 'gitlab' ?
             encodeURI(getPath(file.parent) + file.name).replace(/\//g, '%2F') :
             encodeURI(getPath(file.parent) + file.name)
-        }${aftUrl}`
+            }${aftUrl}`
         if (!isMarkdown(file.name)) {
             console.log(window.location.search)
             window.open(url, '_blank')
